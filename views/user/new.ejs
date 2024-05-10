@@ -1,0 +1,136 @@
+<% if (product.length > 0) { %> <% for (let i = 0; i <
+    product.length; i++) { %>
+<div class="col-lg-3 col-md-4 col-12 col-sm-6">
+    <div class="product-cart-wrap mb-30">
+      <div class="product-img-action-wrap">
+        <div class="product-img product-img-zoom">
+          <a href="shop-product-right.html">
+            <img class="hover-img" src="/productimages/<%= products[i].images[0] %>" alt="" />
+            <img class="default-img" src="/productimages/<%= products[i].images[1] %>" alt="" />
+          </a>
+        </div>
+        <div class="product-action-1">
+          <a href="/api/user/aProduct?id=<%= product[i].id %>" aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal"
+            data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
+          <a aria-label="Add To Wishlist" class="action-btn hover-up" href="shop-wishlist.html"><i
+              class="fi-rs-heart"></i></a>
+          
+        </div>
+        <div class="product-badges product-badges-position product-badges-mrg">
+          <span class="new">New</span>
+        </div>
+      </div>
+      <div class="product-content-wrap">
+        <div class="product-category">
+          <a href="shop-grid-right.html"><%= product[i].category %></a>
+        </div>
+        <h2>
+          <a href="shop-product-right.html"><%= product[i].title %></a>
+        </h2>
+        <div class="rating-result" title="">
+          <span>
+            <span></span>
+          </span>
+        </div>
+        <div class="product-price">
+          <span>₹<%=product[i].price %></span>
+          <span class="old-price">₹<%=product[i].regularPrice %></span>
+        </div>
+        <div class="product-action-1 show">
+              <a class="action-btn hover-up"
+                onclick="addToCart('<%= product[i].id %>')"
+                ><i class="fi-rs-shopping-bag-add"></i
+              ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %> 
+ 
+  <% } else { %>
+ 
+    <% } %>
+
+
+      <a href="/api/user/aProduct?id=<%= product[i].id %>">
+
+
+              <a href="/api/user/aProduct?id=<%= product[i].id %>">
+               
+              </a>
+            </div>
+            <div class="product-action-1">
+            
+              <a
+                aria-label="Add To Wishlist"
+                class="action-btn hover-up"
+                onclick="wishList('<%= product[i]._id %>')"
+                ><i class="fi-rs-heart"></i
+              ></a>
+
+
+
+
+              <a
+                aria-label="Compare"
+                class="action-btn hover-up"
+                href="#"
+                ><i class="fi-rs-shuffle"></i
+              ></a>
+            </div>
+            <div
+              class="product-badges product-badges-position product-badges-mrg"
+            >
+              <span class="hot"><%=product[i].saleStatus%></span>
+            </div>
+          </div>
+          <div class="product-content-wrap">
+            <div class="product-category">
+              <a href="#"><%= product[i].catogary %></a>
+            </div>
+            <h2><a href="#"><%= product[i].title %></a></h2>
+
+            <div class="rating-result" title="">
+              
+            </div>
+            <br>
+            <span style="color: rgb(106, 184, 158);">saved:₹<%=product[i].offerPrice %> </span>
+            <div class="product-price">
+              <span>₹<%=product[i].price %> </span>
+              <span class="old-price"
+                >₹<%=product[i].price+product[i].offerPrice %></span
+              >
+              <a
+                class="float-right"
+                onclick="addToCart('<%= product[i].id %>')"
+                ><i class="fi-rs-shopping-bag-add"></i
+              ></a>
+            </div>
+            <div class="">
+              <!-- Use a common class "add-to-cart-btn" for all add to cart buttons -->
+              <!-- <a href="/api/user/addToCart?id=<%= product[i].id %>""><i class="fi-rs-shopping-bag-add"></i></a> -->
+
+              <!-- <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-btn" href="/api/user/addToCart?id=<%= product[i].id %>"> <i class="fi-rs-shopping-bag-add"></i> </a> -->
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+
+
+
+
+
+<!---------------- this is the modal -------------------->
+
+
+
+
+
+
+
+
+    
