@@ -295,7 +295,7 @@
                                 
                                 <% if (order.status=='pending' ) { %>
                                     <button class="btn btn-fill-out btn-block" onclick="placeOrder('<%= order._id%>')">Continue Payment</button>
-                                    <!-- <a class="btn btn-primary" href="/api/pending-payment?id=<%= order._id%>">Continue Payment</a> -->
+                                    <!-- <a class="btn btn-primary" href="/pending-payment?id=<%= order._id%>">Continue Payment</a> -->
                                     <a onclick="conformCansel('<%= order.product[0]._id %>','<%= order._id %>')"
                                         class="btn btn-md rounded font-sm">Cancel</a>
                                     <% } else if(order.status=='conformed' ){ %>
@@ -313,7 +313,7 @@
 
 
                                                 <% } else if(order.status=='delivered' ){ %>
-                                                    <a class="btn btn-primary" href="/api/invoice?id=<%= order._id%>">invoice</a>
+                                                    <a class="btn btn-primary" href="/invoice?id=<%= order._id%>">invoice</a>
                                                     <a onclick="conformReturn('<%= order.product[0]._id %>','<%= order._id %>')"
                                                         class="btn btn-md rounded font-sm">Return</a>
                                                     <% } else if(order.status=='returned' ){ %>
@@ -456,7 +456,7 @@
                                                                     <%= user.username %> <br>
                                                                         <%= user.email %><br> +1<%= user.mobile %>
                                                                 </p>
-                                                                <a href="/api/profile">View profile</a>
+                                                                <a href="/profile">View profile</a>
                                                             </div>
                                                         </article>
                                                     </div> <!-- col// -->
@@ -651,7 +651,7 @@
 
 
 
-                                                                                            <form action="/api/review"
+                                                                                            <form action="/review"
                                                                                                 method="post">
                                                                                                 <div
                                                                                                     class="location mt-4">
@@ -764,9 +764,9 @@
 
 
                                                             </div> <!-- table-responsive// -->
-                                                            <a class="btn btn-primary" href="/api/allOderData">View
+                                                            <a class="btn btn-primary" href="/allOderData">View
                                                                 Orders</a>
-                                                            <a class="btn btn-primary" href="/api/user/">Continue
+                                                            <a class="btn btn-primary" href="/user/">Continue
                                                                 Shoping</a>
 
                                                         </div> <!-- col// -->
@@ -824,7 +824,7 @@
                         swal("Poof! Your imaginary file has been deleted!", {
                             icon: "success",
                         });
-                        location.href = `/api/return?id=${id}&orderId=${orderId}`
+                        location.href = `/return?id=${id}&orderId=${orderId}`
                     } else {
                         Swal.fire({
                             title: "Return Cansel Success",
@@ -854,7 +854,7 @@
                         swal("Poof! Your imaginary file has been deleted!", {
                             icon: "success",
                         });
-                        location.href = `/api/canselOrder?id=${id}&orderId=${orderId}`
+                        location.href = `/canselOrder?id=${id}&orderId=${orderId}`
                     } else {
                         Swal.fire({
                             title: "Cansel Success",
@@ -884,7 +884,7 @@
 
            
                 $.ajax({
-                    url: '/api/pending-payment',
+                    url: '/pending-payment',
                     method: 'POST',
                     data: {
                         orderId:orderId
@@ -942,7 +942,7 @@
                 })
                 function verifyPayment(response) {
                     $.ajax({
-                        url: '/api/verifyPayment',
+                        url: '/verifyPayment',
                         method: 'post',
                         data: {
                             razorpay_order_id: response.razorpay_order_id,
@@ -961,7 +961,7 @@
                                     timer: 2000,
 
                                 })
-                                location.href = '/api/allOderData'
+                                location.href = '/allOderData'
 
 
                             } else {
@@ -984,7 +984,7 @@
                 }
                 const id = response.oderId
                 const qtyes = response.qty
-                const url = `/api/deleteCart?id=${id}&qtyes=${qtyes}`;
+                const url = `/deleteCart?id=${id}&qtyes=${qtyes}`;
                 // Redirect to the constructed URL
                 window.location.href = url
 

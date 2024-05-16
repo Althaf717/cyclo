@@ -53,9 +53,9 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/api" rel="nofollow">Home</a>
+                    <a href="/" rel="nofollow">Home</a>
                     <span></span>
-                    <a href="/api/shop" rel="nofollow">shop</a>
+                    <a href="/shop" rel="nofollow">shop</a>
                     <span></span> Details
                     <span></span>
                 </div>
@@ -189,7 +189,7 @@
                                         <div class=" ml-5"><a onclick="addToCart('<%= product.id %>')"><button
                                                     type="submit" class="button button-add-to-cart ">Add
                                                     tocart</button></a></div>
-                                        <div class="col-lg-3"><a href="/api/buyNOw?id=<%= product.id %>"><button
+                                        <div class="col-lg-3"><a href="/buyNOw?id=<%= product.id %>"><button
                                                     style="width: 100px; height: 40px;" type="submit"
                                                     class="btn btn-sm button-add-to-cart">Buy Now</button></a></div>
                                     </div>
@@ -383,7 +383,7 @@
                                                         <div class="product-cart-wrap small hover-up">
                                                             <div class="product-img-action-wrap">
                                                                 <div class="product-img product-img-zoom">
-                                                                    <a href="/api/aProduct?id=<%= relatedPr[i].id %>"
+                                                                    <a href="/aProduct?id=<%= relatedPr[i].id %>"
                                                                         tabindex="0">
                                                                         <img class="default-img"
                                                                             src="/productimages/<%= relatedPr[i].images[0] %>"
@@ -486,7 +486,7 @@
 
         function addToCart(id) {
             $.ajax({
-                url: `/api/addToCart?id=${id}`,
+                url: `/addToCart?id=${id}`,
                 method: "get",
                 success: (response) => {
                     if (response.status) {
@@ -512,7 +512,7 @@
                                 confirmButtonText: 'Go to Cart'
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = '/api/cart'; // Redirect the user to the cart page
+                                    window.location.href = '/cart'; // Redirect the user to the cart page
                                 }
                             });
                         } else if (response.error === 'Product out of stock') {
@@ -534,7 +534,7 @@
     <script>
         function wishList(id) {
             $.ajax({
-                url: `/api/addToList?id=${id}`,
+                url: `/addToList?id=${id}`,
                 method: "get",
                 success: (response) => {
                     if (response.status) {

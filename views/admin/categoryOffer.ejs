@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <div class="input-upload">
                             <h4><%= category[i].name %></h4>
-                            <form action="/api/admin/updateCategoryOffer" method="post">
+                            <form action="/admin/updateCategoryOffer" method="post">
                                 <h6><label for="offer">Update Category offer</label></h6>
                                 <input class="form-control" name="offerPercentage" type="text" placeholder="10%">
                                 <input class="form-control" name="id" type="hidden" value="<%= category[i]._id %>">

@@ -14,7 +14,7 @@
                     <p>You can 'Edit' 'List/UnList' 'Delete' the Category</p>
                 </div>
                 <div>
-                    <a href="/api/admin/addCategory" class="btn btn-primary btn-sm rounded">Add New Category</a>
+                    <a href="/admin/addCategory" class="btn btn-primary btn-sm rounded">Add New Category</a>
                 </div>
             </div>
             <div class="card mb-4">
@@ -41,11 +41,11 @@
                                             <td><b><%- categories[i].name %></b></td>
                                             <td><b><%- categories[i].discription %></b></td>
                                             <td class="">
-                                                <a href="/api/admin/editCategory?id=<%- categories[i]._id %>"
+                                                <a href="/admin/editCategory?id=<%- categories[i]._id %>"
                                                     class="btn btn-md-edit rounded font-sm">Edit</a>
                                             </td>
                                             <td class="">
-                                                <a href="/api/admin/deleteCategory?id=<%= categories[i]._id %>" 
+                                                <a href="/admin/deleteCategory?id=<%= categories[i]._id %>" 
                                                     class="btn btn-md-edit rounded font-sm">Delete</a>
                                             </td>                                                                                                                                     
                                         </tr>

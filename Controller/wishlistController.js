@@ -49,7 +49,7 @@ const deleteWishlistItem = async (req, res) => {
         // Remove the product at the found index from the wishlist array
         user.wishlist.splice(productIndex, 1);
         await user.save();
-        res.redirect("/api/Wishlist");
+        res.redirect("/Wishlist");
       } else {
         // Product with the specified productId was not found in the wishlist
         console.log("no poduct found in wish list");

@@ -122,10 +122,10 @@
           <div class="row mb-50">
             <div class="col-lg-6 col-md-12">
               <div class="cart-action text-end">
-                <a href="/api/allOderData" class="btn mr-10 mb-sm-15"
+                <a href="/allOderData" class="btn mr-10 mb-sm-15"
                   ><i class="fi-rs-shuffle mr-10"></i>Your Oders</a
                 >
-                <a href="/api/shop" class="btn"
+                <a href="/shop" class="btn"
                   ><i class="fi-rs-shopping-bag mr-10"></i>Continue Shopping</a
                 >
               </div>
@@ -198,7 +198,7 @@
                     </tbody>
                   </table>
                 </div>
-                <a href="/api/selectPaymentMethord" class="btn">
+                <a href="/selectPaymentMethord" class="btn">
                   <i class="fi-rs-box-alt mr-10"></i> Proceed To CheckOut</a
                 >
               </div>
@@ -263,7 +263,7 @@
 
     // Now you can send the updated data in your AJAX request
     $.ajax({
-      url: "/api/updateCart",
+      url: "/updateCart",
       method: "POST",
       data: {
         productId: productId,
@@ -282,7 +282,7 @@
 
   function testDic(productId, cartQty, count, prPrice, i) {
     $.ajax({
-      url: "/api/testdic",
+      url: "/testdic",
       method: "POST",
       data: {
         productId: productId,
@@ -335,7 +335,7 @@
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
-          url: "/api/deleteItemeCart",
+          url: "/deleteItemeCart",
           method: "POST",
           data: {
             productId: prpductId,

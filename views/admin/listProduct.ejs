@@ -13,7 +13,7 @@
                     <h2 class="content-title card-title">product List</h2>
                 </div>
                 <div>
-                    <a href="/api/admin/addProduct" class="btn btn-primary btn-sm rounded">Add New Product</a>
+                    <a href="/admin/addProduct" class="btn btn-primary btn-sm rounded">Add New Product</a>
                 </div>
             </div>
             <div class="card mb-4">
@@ -45,7 +45,7 @@
                                             <td class="align-middle"><%- product[i].category.name %></td>
                                             <td class="align-middle"><%- product[i].quantity %></td>
                                             <td class="align-middle">
-                                                <a href="/api/admin/editProduct/?id=<%- product[i]._id %>"
+                                                <a href="/admin/editProduct/?id=<%- product[i]._id %>"
                                                    style="align-items: center; background-color: darkcyan;" class="btn btn-sm ">
                                                     Edit
                                                 </a>
@@ -148,7 +148,7 @@
                         if (result.isConfirmed) {
                             $.ajax({
                                 type: "POST",
-                                url: `/api/admin/deleteProduct/${productId}`,
+                                url: `/admin/deleteProduct/${productId}`,
                                 success: function(data) {
                                     Swal.fire({
                                         icon: 'success',

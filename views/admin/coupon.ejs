@@ -9,7 +9,7 @@
            
         </div>
         <div>
-            <a class="btn btn-md rounded font-sm hover-up"  href="/api/admin/addCoupon">Add New Coupon</a>
+            <a class="btn btn-md rounded font-sm hover-up"  href="/admin/addCoupon">Add New Coupon</a>
         </div>
         <div>
             <input type="text" placeholder="Search by name" class="form-control bg-white">
@@ -70,8 +70,8 @@
                                     <td><%=coupon[i].createdOn.toLocaleDateString() %></td>
                                     <td><%=coupon[i].expiryDate.toLocaleDateString() %></td>
                                     <td class="text-end">
-                                        <a href="/api/admin/deleteCoupon?id=<%=coupon[i]._id%>" class="btn btn-md rounded font-sm">Delete</a>
-                                        <a href="/api/admin/editCoupon?id=<%=coupon[i]._id%>" class="btn btn-md rounded font-sm">Edit</a>
+                                        <a href="/admin/deleteCoupon?id=<%=coupon[i]._id%>" class="btn btn-md rounded font-sm">Delete</a>
+                                        <a href="/admin/editCoupon?id=<%=coupon[i]._id%>" class="btn btn-md rounded font-sm">Edit</a>
                                     </td>
                                 </tr>
 

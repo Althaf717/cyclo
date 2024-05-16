@@ -32,15 +32,15 @@
                                             <td><b><%- users[i].email %></b></td>
                                             <td><b><%- users[i].mobile %></b></td>
                                             <!-- <td class="">
-                                                <a href="/api/admin/editUser?id=<%- users[i]._id %>"
+                                                <a href="/admin/editUser?id=<%- users[i]._id %>"
                                                     class="btn btn-md-edit rounded font-sm">Edit</a>
                                             </td> -->
                                             <td class="">
                                                 <% if (users[i].is_blocked===true) { %>
-                                                    <a href="/api/admin/unblockUser?id=<%- users[i]._id %>"
+                                                    <a href="/admin/unblockUser?id=<%- users[i]._id %>"
                                                         class="btn btn-md-unblock rounded font-sm unblock-btn">Unblock</a>
                                                     <% }else{ %>
-                                                        <a href="/api/admin/blockUser?id=<%- users[i]._id %>"
+                                                        <a href="/admin/blockUser?id=<%- users[i]._id %>"
                                                             class="btn btn-md-block rounded font-sm block-btn">Block</a>
                                                         <% } %>
 

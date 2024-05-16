@@ -103,7 +103,7 @@
                   <td><%= orders[i].createdOn.toLocaleDateString() %></td>
                   <td class="text-end">
                     <a
-                      href="/api/oderDetails?id=<%= orders[i].product[j]._id %>&orderId=<%= orders[i]._id %>"
+                      href="/oderDetails?id=<%= orders[i].product[j]._id %>&orderId=<%= orders[i]._id %>"
                       class="btn btn-md rounded font-sm"
                       >Detail</a
                     >
@@ -191,7 +191,7 @@
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
-        location.href = `/api/return?id=${id}&orderId=${orderId}`;
+        location.href = `/return?id=${id}&orderId=${orderId}`;
       } else {
         Swal.fire({
           title: "Return Cansel Success",
@@ -218,7 +218,7 @@
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
-        location.href = `/api/canselOrder?id=${id}&orderId=${orderId}`;
+        location.href = `/canselOrder?id=${id}&orderId=${orderId}`;
       } else {
         Swal.fire({
           title: "Cansel Success",

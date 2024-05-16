@@ -65,7 +65,7 @@ const createProduct = async (req, res) => {
       });
 
       if (caseInsensitiveCategoryExist) {
-        res.redirect("/api/admin/addProduct");
+        res.redirect("/admin/addProduct");
       } else {
         if (products.title) {
           products.slug = slugify(products.title);
@@ -98,11 +98,11 @@ const createProduct = async (req, res) => {
 
         const pr = await newProduct.save();
 
-        res.redirect("/api/admin/product");
+        res.redirect("/admin/product");
       }
     } else {
       console.log("Product already exists");
-      res.redirect("/api/admin/addProduct");
+      res.redirect("/admin/addProduct");
     }
   } catch (error) {
     console.log(
@@ -137,13 +137,13 @@ const productEdited = async (req, res) => {
   try {
     const existproduct = await Product.findOne({ title: req.body.title });
     if (existproduct) {
-      res.redirect(`/api/admin/editProduct?id=${req.body.id}`);
+      res.redirect(`/admin/editProduct?id=${req.body.id}`);
     } else {
       const caseInsensitiveCategoryExist = await Product.findOne({
         title: { $regex: new RegExp("^" + req.body.title + "$", "i") },
       });
       if (caseInsensitiveCategoryExist) {
-        res.redirect(`/api/admin/editProduct?id=${req.body.id}`);
+        res.redirect(`/admin/editProduct?id=${req.body.id}`);
       } else {
         const id = req.body.id;
         const img =
@@ -212,7 +212,7 @@ const productEdited = async (req, res) => {
               console.error("Error:", error);
             });
         }
-        res.redirect("/api/admin/Product");
+        res.redirect("/admin/Product");
       }
     }
   } catch (error) {
@@ -592,7 +592,7 @@ const unlistProduct = async (req, res) => {
       { new: true }
     );
 
-    res.redirect("/api/admin/listProduct");
+    res.redirect("/admin/listProduct");
   } catch (error) {
     console.log(
       "error happence in categoryController unlistProduct function",
@@ -614,7 +614,7 @@ const listProduct = async (req, res) => {
       { new: true }
     );
 
-    res.redirect("/api/admin/listProduct");
+    res.redirect("/admin/listProduct");
   } catch (error) {
     console.log(
       "error happence in categoryController listProduct function",
@@ -642,7 +642,7 @@ const deleteSingleImage = async (req, res) => {
 
     console.log("Deleted image:", imageToDelete);
 
-    res.redirect(`/api/admin/editProduct?id=${product._id}`);
+    res.redirect(`/admin/editProduct?id=${product._id}`);
   } catch (error) {
     console.log(
       "Error occurred in categoryController deleteSingleImage function",

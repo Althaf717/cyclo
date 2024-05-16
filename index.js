@@ -48,8 +48,8 @@ app.use(loadCategories);
 
 // Middleware to fetch categories
 
-app.use("/api", UserRouter);
-app.use("/api/admin", AdminRouter);
+app.use("/", UserRouter);
+app.use("/admin", AdminRouter);
 
 
 app.use(function(req,res,next){
@@ -74,5 +74,5 @@ app.use(function(err,req,res,next){
 
 
 app.listen(PORT, () => {
-  console.log(`port is number running ${PORT} http://localhost:${PORT}/api`);
+  console.log(`port is number running ${PORT} http://localhost:${PORT}/`);
 });

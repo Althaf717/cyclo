@@ -6,12 +6,12 @@ const isLogin = async (req, res, next) => {
       const userData = await User.findById(req.session.user._id);
       if (userData && userData.is_blocked) {
         delete req.session.user;
-        res.redirect("/api/login");
+        res.redirect("/login");
       } else {
         next();
       }
     } else {
-      res.redirect("/api/login");
+      res.redirect("/login");
     }
   } catch (error) {
     console.log(error.message);
@@ -21,7 +21,7 @@ const isLogin = async (req, res, next) => {
 const isLogout = async (req, res, next) => {
   try {
     if (req.session.user) {
-      res.redirect("/api/");
+      res.redirect("/");
     } else {
       next();
     }

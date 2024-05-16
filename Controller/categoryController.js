@@ -57,7 +57,7 @@ const addCategory = async (req, res) => {
       await newCategory.save();
 
       console.log("newCategory:", newCategory);
-      res.redirect("/api/admin/Category");
+      res.redirect("/admin/Category");
     }
   } catch (error) {
     console.log(
@@ -94,7 +94,7 @@ const deleteCategory = async (req, res) => {
     const deletedCategory = await Category.findByIdAndDelete(id);
     console.log("Deleted category:", deletedCategory);
 
-    res.redirect("/api/admin/Category");
+    res.redirect("/admin/Category");
   } catch (error) {
     console.log(
       "Error happened in categoryController deleteCategory function",
@@ -116,7 +116,7 @@ const editCategory = async (req, res) => {
     if (user) {
       res.render("editCategory", { user: user });
     } else {
-      res.redirect("/api/admin/Category");
+      res.redirect("/admin/Category");
     }
   } catch (error) {
     console.log(
@@ -144,7 +144,7 @@ const updateCategory = async (req, res) => {
         },
         { new: true }
       );
-      res.redirect("/api/admin/category");
+      res.redirect("/admin/category");
     } else {
       res.render("editCategory", {
         message: "category name already exist",
@@ -168,7 +168,7 @@ const updateCategory = async (req, res) => {
 //             status:false
 //         },{new:true});
 
-//         res.redirect('/api/admin/listCategory')
+//         res.redirect('/admin/listCategory')
 //     } catch (error) {
 //         console.log('error happence in categoryController unlistCategory function', error);
 //     }
@@ -183,7 +183,7 @@ const updateCategory = async (req, res) => {
 //             status:true
 //         },{new:true});
 
-//         res.redirect('/api/admin/listCategory')
+//         res.redirect('/admin/listCategory')
 
 //     } catch (error) {
 //         console.log('error happence in categoryController listCategory function', error);

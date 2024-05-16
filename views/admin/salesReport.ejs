@@ -103,7 +103,7 @@
         async function filter(Number) {
             if (Number) {
                 try {
-                    const response = await fetch(`/api/admin/filter-sales/?identify=${Number}`);
+                    const response = await fetch(`/admin/filter-sales/?identify=${Number}`);
                     const data = await response.json();
                     const orders = data.orders;
 
@@ -176,7 +176,7 @@
                 // console.log(startingDate)
                 // console.log(endingDate)
 
-                const response = await fetch('/api/admin/datewise-filter-sales', {
+                const response = await fetch('/admin/datewise-filter-sales', {
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/json'
@@ -302,7 +302,7 @@
 
 
             try {
-                const response = await fetch('/api/admin/generate-pdf', {
+                const response = await fetch('/admin/generate-pdf', {
                     method: 'post',
                     headers: {
                         "Content-Type": 'application/json'
@@ -356,7 +356,7 @@
             }
     
             try {
-                const response = await fetch('/api/admin/generate-csv', {
+                const response = await fetch('/admin/generate-csv', {
                     method: 'post',
                     headers: {
                         "Content-Type": 'application/json'

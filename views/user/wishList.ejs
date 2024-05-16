@@ -4,7 +4,7 @@
   <div class="page-header breadcrumb-wrap">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/api/user/" rel="nofollow">Home</a>
+        <a href="/user/" rel="nofollow">Home</a>
         <span></span> Shop <span></span> Wishlist
       </div>
     </div>
@@ -63,7 +63,7 @@
                   </td>
 
                   <td class="action" data-title="Remove">
-                    <a href="/api/deleteWishlistItem?id=<%=products[i]._id %>"
+                    <a href="/deleteWishlistItem?id=<%=products[i]._id %>"
                       ><i class="fi-rs-trash"></i
                     ></a>
                   </td>
@@ -85,7 +85,7 @@
 <script>
   function addToCart(id) {
     $.ajax({
-      url: `/api/addToCart?id=${id}`,
+      url: `/addToCart?id=${id}`,
       method: "get",
       success: (response) => {
         if (response.status) {

@@ -4,7 +4,7 @@
   <div class="page-header breadcrumb-wrap">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/api" rel="nofollow">Home</a>
+        <a href="/" rel="nofollow">Home</a>
         <span></span>Login
       </div>
     </div>
@@ -24,7 +24,7 @@
                   </div>
                   <form
                     name="loginForm"
-                    action="/api/login"
+                    action="/login"
                     method="post"
                     onsubmit="return validateLoginForm()"
                   >
@@ -59,7 +59,7 @@
                           >
                         </div>
                       </div>
-                      <a class="text-muted" href="/api/forgotPassword"
+                      <a class="text-muted" href="/forgotPassword"
                         >Forgot password?</a
                       >
                     </div>
@@ -75,7 +75,7 @@
                     <div>
                       New to Cyclo?
                       <span style="color: rgb(18, 90, 106); font-weight: bolder"
-                        ><a href="/api/register">CREATE AN ACCOUNT</a></span
+                        ><a href="/register">CREATE AN ACCOUNT</a></span
                       >
                     </div>
                     <% if(typeof message !== 'undefined'){ %>

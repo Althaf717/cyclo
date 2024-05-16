@@ -5,7 +5,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/api" rel="nofollow">Home</a>
+                    <a href="" rel="nofollow">Home</a>
                     <span></span> Account
                 </div>
             </div>
@@ -51,7 +51,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/api/logout"><i
+                                            <a class="nav-link" href="/logout"><i
                                                     class="fi-rs-sign-out mr-10"></i>Logout</a>
                                         </li>
 
@@ -123,9 +123,9 @@
 
                                                         </div> <!--  col.// -->
                                                         <div class="col-lg-3"> <a
-                                                                href="/api/editProfile?id=<%=user._id %>">Edit
+                                                                href="/editProfile?id=<%=user._id %>">Edit
                                                                 Profile</a> <br> <a
-                                                                href="/api/changePassword?id=<%=user._id %>">Change
+                                                                href="/changePassword?id=<%=user._id %>">Change
                                                                 Password</a></div>
 
 
@@ -184,7 +184,7 @@
                                                                                    order[i].totalPrice.toFixed(2) : '' %>
                                                                            </td>
                                                                            <!-- Check if totalPrice exists before formatting -->
-                                                                           <td><a href="/api/orderDetails?orderId=<%= order[i]._id %>"
+                                                                           <td><a href="/orderDetails?orderId=<%= order[i]._id %>"
                                                                                    class="btn-small d-block">View</a></td>
                                                                        </tr>
                                                                    <% } 
@@ -232,7 +232,7 @@
                                             </div>
                                             <div class="card-body">
 
-                                                <form method="post" action="/api/addAddress" name="addressForm"
+                                                <form method="post" action="/addAddress" name="addressForm"
                                                     onsubmit="return validation()">
                                                     <div class="row">
                                                         <div class="form-group col-md-12">
@@ -352,7 +352,7 @@
                                                                 <p>
                                                                     <%= user.address[i].region %>
                                                                 </p>
-                                                                <a href="/api/editAddress?id=<%=user.address[i]._id %>"
+                                                                <a href="/editAddress?id=<%=user.address[i]._id %>"
                                                                     class="btn-small">Edit</a> <span> || </span>
                                                                 <a onclick="itemDelete('<%=user.address[i]._id %>')"
                                                                     class="btn-small">Delete</a>
@@ -565,7 +565,7 @@
     </main>
     <script>
         function referal(id) {
-            var copyText = `http://localhost:5000/api/register?id=${id}`;
+            var copyText = `http://localhost:5000/register?id=${id}`;
 
 
             Swal.fire({
@@ -609,7 +609,7 @@
 
 
                 $.ajax({
-                    url: "/api/addMoneyWallet",
+                    url: "/addMoneyWallet",
                     method: "POST",
                     data: {
                         amount: amount
@@ -680,7 +680,7 @@
                 function verifyPayment(response) {
 
                     $.ajax({
-                        url: '/api/verifyPayments',
+                        url: '/verifyPayments',
                         method: 'post',
                         data: {
                             razorpay_order_id: response.razorpay_order_id,
@@ -692,7 +692,7 @@
 
 
                                 $.ajax({
-                                    url: "/api/updateMongoWallet",
+                                    url: "/updateMongoWallet",
                                     method: "post",
                                     data: {
                                         amount: amount,
@@ -745,7 +745,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: '/api/deleteAddress',
+                        url: '/deleteAddress',
                         method: 'post',
                         data: {
                             productId: prpductId

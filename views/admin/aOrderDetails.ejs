@@ -277,7 +277,7 @@ function statusChange(){
         if(selectedStatus=='pending'){
 
             $.ajax({
-                url : '/api/admin/changeStatusPending?orderId=<%=order._id%>',
+                url : '/admin/changeStatusPending?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){
@@ -292,7 +292,7 @@ function statusChange(){
            
         }else if(selectedStatus=='Confirmed'){
             $.ajax({
-                url : '/api/admin/changeStatusConfirmed?orderId=<%=order._id%>',
+                url : '/admin/changeStatusConfirmed?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){
@@ -307,7 +307,7 @@ function statusChange(){
          
         }else if(selectedStatus=='Shipped'){
             $.ajax({
-                url : '/api/admin/changeStatusShipped?orderId=<%=order._id%>',
+                url : '/admin/changeStatusShipped?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){
@@ -321,7 +321,7 @@ function statusChange(){
           
         }else if(selectedStatus=='Delivered'){
             $.ajax({
-                url : '/api/admin/changeStatusDelivered?orderId=<%=order._id%>',
+                url : '/admin/changeStatusDelivered?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){
@@ -335,7 +335,7 @@ function statusChange(){
             
         }else if(selectedStatus=='returned'){
             $.ajax({
-                url : '/api/admin/changeStatusreturned?orderId=<%=order._id%>',
+                url : '/admin/changeStatusreturned?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){
@@ -350,7 +350,7 @@ function statusChange(){
         }
         else if(selectedStatus=='canceled'){
             $.ajax({
-                url : '/api/admin/changeStatusCanseled?orderId=<%=order._id%>',
+                url : '/admin/changeStatusCanseled?orderId=<%=order._id%>',
                 method:"get",
                 success: (response)=>{
                     if(response.status){

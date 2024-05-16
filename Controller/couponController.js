@@ -47,7 +47,7 @@ const addCoupon = async (req, res) => {
 
     const create = await coupon.save();
 
-    res.redirect("/api/admin/coupon");
+    res.redirect("/admin/coupon");
   } catch (error) {
     console.log(
       "Error happened in the coupon controller in the function addCoupon",
@@ -86,7 +86,7 @@ const deleteCoupon = async (req, res) => {
 
     const coupon = await Coupon.findByIdAndDelete(id);
 
-    res.redirect("/api/admin/coupon");
+    res.redirect("/admin/coupon");
   } catch (error) {
     console.log(
       "Error happence in the coupon controller in the funtion deleteCoupon",
@@ -142,7 +142,7 @@ const updateCoupon = async (req, res) => {
       );
     }
 
-    res.redirect("/api/admin/coupon");
+    res.redirect("/admin/coupon");
   } catch (error) {
     console.log(
       "Error happened in the coupon controller in the function editCoupon",

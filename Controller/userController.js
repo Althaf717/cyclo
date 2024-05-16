@@ -111,7 +111,7 @@ const registerUser = async (req, res) => {
         to: email, // list of receivers
         subject: "Verify Your Account  ✔", // Subject line
         text: `Your OTP is : ${otp}`, // plain text body
-        html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/api/emailOtp/">Click here</a></b>`, // html body
+        html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/emailOtp/">Click here</a></b>`, // html body
       });
       if (info) {
         req.session.userOTP = otp;
@@ -156,7 +156,7 @@ const emailVerified = async (req, res) => {
       req.session.user = saveUserData._id;
       req.session.save();
 
-      res.redirect("/api");
+      res.redirect("");
     } else {
       // res.render("emailOtp",{message:"Invalid OTP Re-enter Correct OTP"})
       res.render("emailOtp", { message: "Invalid OTP Re-enter Correct OTP" });
@@ -192,7 +192,7 @@ const resendOTP = async (req, res) => {
       to: email, // list of receivers
       subject: "Verify Your Account  ✔", // Subject line
       text: `Your OTP is : ${otp}`, // plain text body
-      html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/api/emailOtp/">Click here</a></b>`, // html body
+      html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/emailOtp/">Click here</a></b>`, // html body
     });
     if (info) {
       req.session.userOTP = otp;
@@ -219,7 +219,7 @@ const userisLogin = async (req, res) => {
       if (findUser.is_blocked !== true) {
         req.session.user = findUser._id;
         req.session.save();
-        res.redirect("/api");
+        res.redirect("");
       } else {
         res.render("userLogin", { message: "your blocked admin" });
       }
@@ -240,7 +240,7 @@ const userisLogout = async (req, res) => {
   try {
     req.session.destroy();
 
-    res.redirect("/api");
+    res.redirect("");
   } catch (error) {
     console.log("Error happens in userControler userLogout function:", error);
   }
@@ -284,7 +284,7 @@ const forgotEmailValid = async (req, res) => {
         to: email,
         subject: "Verify Your Account  ✔",
         text: `Your OTP is : ${otp}`,
-        html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/api/emailOTP/">Click here</a></b>`,
+        html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/emailOTP/">Click here</a></b>`,
       });
       if (info) {
         req.session.forgotOTP = otp;
@@ -296,7 +296,7 @@ const forgotEmailValid = async (req, res) => {
       }
     } else {
       req.flash("error", "User not found");
-      res.redirect("/api/forgotPassword");
+      res.redirect("/forgotPassword");
     }
   } catch (error) {
     console.log(
@@ -351,7 +351,7 @@ const forgotresendOTP = async (req, res) => {
       to: email,
       subject: "Verify Your Account  ✔",
       text: `Your OTP is : ${otp}`,
-      html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/api/emailOTP/">Click here</a></b>`,
+      html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/emailOTP/">Click here</a></b>`,
     });
     if (info) {
       req.session.forgotOTP = otp;
@@ -379,7 +379,7 @@ const updatePassword = async (req, res) => {
       user.password = newPassword;
       const updateUser = await user.save();
       delete req.session.forgotEmail;
-      res.redirect("/api/login");
+      res.redirect("/login");
     } else {
       res.status(404).send("User not found");
     }
@@ -470,7 +470,7 @@ const updateProfile = async (req, res) => {
           to: email, // list of receivers
           subject: "Verify Your Account  ✔", // Subject line
           text: `Your OTP is : ${otp}`, // plain text body
-          html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/api/emailOtp/">Click here</a></b>`, // html body
+          html: `<b>  <h4 >Your OTP  ${otp}</h4>    <br>  <a href="/emailOtp/">Click here</a></b>`, // html body
         });
         if (info) {
           req.session.userOTP = otp;
@@ -482,7 +482,7 @@ const updateProfile = async (req, res) => {
           res.json("email eroor");
         }
       }
-      res.redirect("/api/profile");
+      res.redirect("/profile");
     } else {
       console.log("user is alredy exist ");
     }
@@ -517,7 +517,7 @@ const editemailUpdate = async (req, res) => {
       user.mobile = mobile;
       const updatedUser = await user.save();
     }
-    res.redirect("/api/profile");
+    res.redirect("/profile");
   } catch (error) {
     console.log("error happent user ctrl editemailupdate error:", error);
   }
@@ -555,7 +555,7 @@ const checkPassword = async (req, res) => {
     if (isMatch) {
       user.password = password;
       await user.save();
-      res.redirect("/api/profile");
+      res.redirect("/profile");
       res.json({ status: "success", message: "Password changed" });
     } else {
       res.json({ status: "error", message: "Current Password is Incorrect" });
@@ -607,7 +607,7 @@ const addAddress = async (req, res) => {
     user.address.push(newAddress);
     await user.save();
     console.log("Address added to user:", user);
-    res.redirect("/api/profile");
+    res.redirect("/profile");
   } catch (error) {
     console.log("Error happens in userControler addAddress function:", error);
   }
@@ -667,7 +667,7 @@ const updateEditedAddress = async (req, res) => {
         updatedAddress.adressType = adressType;
         await user.save();
 
-        res.redirect("/api/profile");
+        res.redirect("/profile");
       } else {
         console.log("adress not found ");
       }

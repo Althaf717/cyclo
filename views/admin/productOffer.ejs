@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="input-upload">
                         <img src="/productimages/<%= product[i].images[0] %>" alt="">
-                        <form action="/api/admin/updateOffer" method="post">
+                        <form action="/admin/updateOffer" method="post">
                             <h6><label for="offer">Update Product offer</label></h6>
                             <input class="form-control" name="offerPrice" type="text" value="<%= product[i].offerPrice %>" placeholder="₹5000">
                             <input class="form-control" name="id" type="hidden" value="<%= product[i]._id %>">

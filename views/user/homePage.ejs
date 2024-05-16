@@ -116,7 +116,7 @@
               </button>
             </li>
           </ul>
-          <a href="/api/shop" class="view-more d-none d-md-flex">View More<i
+          <a href="/shop" class="view-more d-none d-md-flex">View More<i
               class="fi-rs-angle-double-small-right"></i></a>
         </div>
         <!--End nav-tabs-->
@@ -128,13 +128,13 @@
                     <div class="product-cart-wrap mb-30">
                       <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                          <a href="/api/aProduct?id=<%= feature[i].id %>">
+                          <a href="/aProduct?id=<%= feature[i].id %>">
                             <img class="default-img" src="/productimages/<%= feature[i].images[0] %>" alt="" />
                             <img class="hover-img" src="/productimages/<%= feature[i].images[1] %>" alt="" />
                           </a>
                         </div>
                         <div class="product-action-1">
-                          <a href="/api/aProduct?id=<%= feature[i].id %>" aria-label="Quick view"
+                          <a href="/aProduct?id=<%= feature[i].id %>" aria-label="Quick view"
                             class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
                               class="fi-rs-eye"></i></a>
                               <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="wishList('<%= feature[i]._id %>')"><i
@@ -192,13 +192,13 @@
                     <div class="product-cart-wrap mb-30">
                       <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                          <a href="/api/aProduct?id=<%= popular[i].id %>">
+                          <a href="/aProduct?id=<%= popular[i].id %>">
                             <img class="default-img" src="/productimages/<%= popular[i].images[0] %>" alt="" />
                             <img class="hover-img" src="/productimages/<%= popular[i].images[1] %>" alt="" />
                           </a>
                         </div>
                         <div class="product-action-1">
-                          <a href="/api/aProduct?id=<%= popular[i].id %>" aria-label="Quick view"
+                          <a href="/aProduct?id=<%= popular[i].id %>" aria-label="Quick view"
                             class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
                               class="fi-rs-eye"></i></a>
                               <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="wishList('<%= popular[i]._id %>')"><i
@@ -257,13 +257,13 @@
                     <div class="product-cart-wrap mb-30">
                       <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                          <a href="/api/aProduct?id=<%= product[i].id %>">
+                          <a href="/aProduct?id=<%= product[i].id %>">
                             <img class="default-img" src="/productimages/<%= product[i].images[0] %>" alt="" />
                             <img class="hover-img" src="/productimages/<%= product[i].images[1] %>" alt="" />
                           </a>
                         </div>
                         <div class="product-action-1">
-                          <a href="/api/aProduct?id=<%= product[i].id %>" aria-label="Quick view"
+                          <a href="/aProduct?id=<%= product[i].id %>" aria-label="Quick view"
                             class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
                               class="fi-rs-eye"></i></a>
                           <a aria-label="Add To Wishlist" class="action-btn hover-up" onclick="wishList('<%= product[i]._id %>')"><i
@@ -408,7 +408,7 @@
                 <div class="product-cart-wrap small hover-up">
                   <div class="product-img-action-wrap">
                     <div class="product-img product-img-zoom">
-                      <a href="/api/aProduct?id=<%= product[i].id %>">
+                      <a href="/aProduct?id=<%= product[i].id %>">
                         <img class="default-img" src="/productimages/<%= product[i].images[0] %>" alt="" />
                         <img class="hover-img" src="/productimages/<%= product[i].images[2] %>" alt="" />
                       </a>
@@ -513,7 +513,7 @@
   <script>
     function wishList(id) {
       $.ajax({
-        url: `/api/addToList?id=${id}`,
+        url: `/addToList?id=${id}`,
         method: "get",
         success: (response) => {
           if (response.status) {
@@ -541,7 +541,7 @@
   <script>
     function addToCart(id) {
       $.ajax({
-        url: `/api/addToCart?id=${id}`,
+        url: `/addToCart?id=${id}`,
         method: "get",
         success: (response) => {
           if (response.status) {
@@ -567,7 +567,7 @@
                 confirmButtonText: "Go to Cart",
               }).then((result) => {
                 if (result.isConfirmed) {
-                  window.location.href = "/api/cart"; // Redirect the user to the cart page
+                  window.location.href = "/cart"; // Redirect the user to the cart page
                 }
               });
             } else if (response.error === "Product out of stock") {

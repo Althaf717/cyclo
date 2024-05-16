@@ -44,24 +44,24 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1">
-                        <a href="/api"><img src="/imgs/theme/Cyclo.jpg" alt="logo"></a>
+                        <a href="/"><img src="/imgs/theme/Cyclo.jpg" alt="logo"></a>
                     </div>
                     <div class="main-menu main-menu-grow main-menu-padding-1 main-menu-lh-1 main-menu-mrg-1 hm3-menu-padding d-none d-lg-block hover-boder">
                         <nav>
                             <ul>
-                                <li><a class="active" href="/api">Home</a></li>
+                                <li><a class="active" href="/">Home</a></li>
                                 <li><a href="#">Bikes <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <% for( let i=0; i < categories.length; i++ ) { %>
                                             <li class="nav-item"><a class="nav-link filter-options"
-                                                    href="/api/shop/?name=<%- categories[i]._id %>"><%- categories[i].name %></a>
+                                                    href="/shop/?name=<%- categories[i]._id %>"><%- categories[i].name %></a>
                                             </li>
                                             <% } %>
-                                        <li><a href="/api/shop">View All</a></li>
+                                        <li><a href="/shop">View All</a></li>
                                     </ul>
                                 </li>
                                 <!-- <li><a href="">Accessories</a></li> -->
-                                <li><a href="/api/about">About Us</a></li>
+                                <li><a href="/about">About Us</a></li>
                                 <li><a href="">Contact</a></li>
                             </ul>
                         </nav>
@@ -69,7 +69,7 @@
                     <div class="header-action-right">
                         <div class="search_input" id="search_input_box">
                             <div class="container">
-                                <form class="d-flex justify-content-between" action="/api/search-sort/?">
+                                <form class="d-flex justify-content-between" action="/search-sort/?">
                                     <input type="text" class="form-control" id="search_input" placeholder="Search Here" name="search" value="%>">
                                     <button type="submit" class="btn">Search</button>
                                     <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
@@ -78,13 +78,13 @@
                         </div>
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-                                <a href="/api/Wishlist">
+                                <a href="/Wishlist">
                                     <img class="svgInject" alt="Evara" src="/imgs/theme/icons/icon-heart.svg">
                                     <span id="wishlistItemCount" class="pro-count blue"></span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="/api/cart">
+                                <a class="mini-cart-icon" href="/cart">
                                     <img alt="Evara" src="/imgs/theme/icons/icon-cart.svg">
                                     <!-- <span class="pro-count blue">2</span> -->
                                     <span id="cartItemCount" class="pro-count blue"></span>
@@ -99,12 +99,12 @@
                             </div>
                             <div class="login">
                                 <% if ( locals.user ) { %>
-                                    <ul><i class="fi-rs-user"></i><a href="/api/profile">Profile</a></ul>
+                                    <ul><i class="fi-rs-user"></i><a href="/profile">Profile</a></ul>
                                 <% } else { %>
-                                    <ul><i class="fi-rs-user"></i><a href="/api/login">Log In</a></ul>
+                                    <ul><i class="fi-rs-user"></i><a href="/login">Log In</a></ul>
                                 <% } %>
                                 
-                                <!-- <ul ><i class="fi-rs-user"></i><a href="/api/login">Log In</a></ul> -->
+                                <!-- <ul ><i class="fi-rs-user"></i><a href="/login">Log In</a></ul> -->
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="/api"><img src="/imgs/theme/Cyclo.jpg" alt="logo"></a>
+                    <a href="/"><img src="/imgs/theme/Cyclo.jpg" alt="logo"></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -194,7 +194,7 @@
     // Function to update the cart count
     function updateCartCount() {
         $.ajax({
-            url: '/api/getCartCount',
+            url: '/getCartCount',
             method: 'GET',
             success: function(response) {
                 $('#cartItemCount').text(response.count);
@@ -214,7 +214,7 @@
       $(document).ready(function(){
         function updateWishlistCount() {
             $.ajax({
-                url:'/api/getWishlistCount',
+                url:'/getWishlistCount',
                 method:'GET',
                 success:function(response){
                     $('#wishlistItemCount').text(response.count);

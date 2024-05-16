@@ -35,7 +35,7 @@
                                     }
                                 }, 5000); // 5000 milliseconds = 5 seconds
                             </script>
-                            <form method="post" onsubmit="return editProductValidate()" action="/api/admin/productEdited"
+                            <form method="post" onsubmit="return editProductValidate()" action="/admin/productEdited"
                                 enctype="multipart/form-data">
                                 <div class="mb-4">
                                     <label for="productName" class="form-label">Product Name</label>
@@ -140,7 +140,7 @@
                                                 </div>
                                                 <div class="card-body bg-light d-flex align-items-center justify-content-center"
                                                     style="height: 50px;">
-                                                     <a href="/api/admin/deleteSingleImage?img=<%= product.images[i] %>&id=<%=product._id %>"><span class="btn btn-outline-danger">Delete</span></a>
+                                                     <a href="/admin/deleteSingleImage?img=<%= product.images[i] %>&id=<%=product._id %>"><span class="btn btn-outline-danger">Delete</span></a>
                                                      <!-- btn btn-outline-danger imageRemoveBtn -->
                                                      <!-- badge rounded-pill alert-danger -->
                                                 </div>

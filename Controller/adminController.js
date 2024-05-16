@@ -23,9 +23,9 @@ const adminVerify = async (req, res) => {
       const isMatch = await findAdmin.isPasswordMatched(password);
       if (isMatch && findAdmin.is_admin === true) {
         req.session.Admin = true;
-        res.redirect("/api/admin/dashboard");
+        res.redirect("/admin/dashboard");
       } else {
-        res.redirect("/api/admin");
+        res.redirect("/admin");
       }
     } else {
       // Render the admin login page with an error message
@@ -295,7 +295,7 @@ const blockUser = async (req, res) => {
       // req.session.userBloked = true;
       // req.session.isBlocked = true;
 
-      res.redirect("/api/admin/listUser");
+      res.redirect("/admin/listUser");
     }
   } catch (error) {
     console.log(
@@ -324,7 +324,7 @@ const unBlockUser = async (req, res) => {
       req.session.userBloked = false;
       req.session.blockedMessage = "User is unblocked by admin.";
       console.log("User is unblocked by admin", unBlokedUser);
-      res.redirect("/api/admin/listUser");
+      res.redirect("/admin/listUser");
     }
   } catch (error) {
     console.log(
@@ -337,7 +337,7 @@ const unBlockUser = async (req, res) => {
 const logoutAdmin = async (req, res) => {
   try {
     req.session.Admin = null;
-    res.redirect("/api/admin");
+    res.redirect("/admin");
   } catch (error) {
     console.log(error.message);
   }

@@ -39,7 +39,7 @@
                 </h6>
                 <br />
                 <br />
-                <form action="/api/emailVerified" method="post">
+                <form action="/emailVerified" method="post">
                   <div
                     id="otp"
                     class="inputs d-flex flex-row justify-content-center mt-2"
@@ -103,7 +103,7 @@
                 <small id="timer"></small>
                 <a
                   style="text-decoration: none; color: #ff0000"
-                  href="/api/resendOTP?email=<%= locals.email %>"
+                  href="/resendOTP?email=<%= locals.email %>"
                   id="resend"
                   ><span style="color: black">Didn't get the code</span> Resend
                   OTP</a

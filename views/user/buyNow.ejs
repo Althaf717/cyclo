@@ -378,7 +378,7 @@
                     }
 
                     // Perform an AJAX request here with the couponCode
-                    fetch('/api/validateCoupon', {
+                    fetch('/validateCoupon', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -505,7 +505,7 @@
                 })
             } else {
                 $.ajax({
-                    url: '/api/buynowPlaceOrder',
+                    url: '/buynowPlaceOrder',
                     method: 'POST',
                     data: {
                         totalPrice: numericValue,
@@ -527,7 +527,7 @@
                                 showConfirmButton: false,
                                 timer: 2000,
                             })
-                            location.href = '/api/allOderData'
+                            location.href = '/allOderData'
 
                         } else if (response.method == 'online') {
                             // Replace with your Razorpay API key
@@ -586,7 +586,7 @@
                                 showConfirmButton: false,
                                 timer: 2000,
                             })
-                            location.href = '/api/allOderData'
+                            location.href = '/allOderData'
                         }
                         else {
                             Swal.fire({
@@ -601,7 +601,7 @@
                 })
                 function verifyPayment(response) {
                     $.ajax({
-                        url: '/api/verifyPayment',
+                        url: '/verifyPayment',
                         method: 'post',
                         data: {
                             razorpay_order_id: response.razorpay_order_id,
@@ -620,7 +620,7 @@
                                     timer: 2000,
 
                                 })
-                                location.href = '/api/allOderData'
+                                location.href = '/allOderData'
 
 
                             } else {
@@ -643,7 +643,7 @@
                 }
                 const id = response.oderId
                 const qtyes = response.qty
-                const url = `/api/deleteCart?id=${id}&qtyes=${qtyes}`;
+                const url = `/deleteCart?id=${id}&qtyes=${qtyes}`;
                 // Redirect to the constructed URL
                 window.location.href = url
 
@@ -670,7 +670,7 @@
             var productId = document.getElementById('productId').value;
 
             $.ajax({
-                url: "/api/useWallet",
+                url: "/useWallet",
                 method: "POST",
                 data: {
                     total: sum,
@@ -682,7 +682,7 @@
 
 
 
-                        location.href = `/api/sumWalletBuynow?sum=${response.sum}&id=${productId}`
+                        location.href = `/sumWalletBuynow?sum=${response.sum}&id=${productId}`
 
                     }
                 }

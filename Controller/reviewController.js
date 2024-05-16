@@ -51,7 +51,7 @@ const review = async (req, res) => {
     const updatePr = await product.save();
     console.log("After serialization:", updatePr);
 
-    res.redirect(`/api/aProduct?id=${productId}`);
+    res.redirect(`/aProduct?id=${productId}`);
   } catch (error) {
     console.log("Error Happened in review Ctrl in the function review", error);
   }

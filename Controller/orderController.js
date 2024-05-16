@@ -453,7 +453,7 @@ const canselOder = async (req, res) => {
       }
     }
 
-    res.redirect("/api/allOderData");
+    res.redirect("/allOderData");
   } catch (error) {
     console.log("Error occurred in cart ctrl in function canselOrder", error);
 
@@ -511,7 +511,7 @@ const returnOrder = async (req, res) => {
       }
     }
 
-    res.redirect("/api/allOderData");
+    res.redirect("/allOderData");
   } catch (error) {
     console.log("Error occurred in returnOrder function:", error);
 
@@ -1052,7 +1052,7 @@ const buyNOw = async (req, res) => {
       let sum = product.price+40;
       res.render("buyNow", { user, product, sum, coupon }); 
     } else {
-      res.redirect(`/api/aProduct?id=${product._id}`);
+      res.redirect(`/aProduct?id=${product._id}`);
     }
   } catch (error) {
     console.log("Error occurred in orderCTrl buyNOw:", error);

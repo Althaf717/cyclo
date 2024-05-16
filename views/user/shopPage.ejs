@@ -4,7 +4,7 @@
   <div class="page-header breadcrumb-wrap">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/api" rel="nofollow">Home</a>
+        <a href="" rel="nofollow">Home</a>
         <span></span> Shop
       </div>
     </div>
@@ -37,7 +37,7 @@
                     <li>
                       <a
                         class=""
-                        href="/api/shop/?name=<%- categories[i]._id %>"
+                        href="/shop/?name=<%- categories[i]._id %>"
                         >
                         <%- categories[i].name %>
                       </a>
@@ -59,37 +59,37 @@
                 <div class="sort-by-dropdown">
                   <ul>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/price-wise-sort/?name=low&category=<%= category_id %>"
+                      <a class="nav-link" href="/price-wise-sort/?name=low&category=<%= category_id %>"
                         >Price:Low to High</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/price-wise-sort/?name=hig&category=<%= category_id %>"
+                      <a class="nav-link" href="/price-wise-sort/?name=hig&category=<%= category_id %>"
                         >Price:High to Low</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/char-wise-sort/?name=a-z&category=<%= category_id %>"
+                      <a class="nav-link" href="/char-wise-sort/?name=a-z&category=<%= category_id %>"
                         >Char:aA - zZ</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/char-wise-sort/?name=z-a&category=<%= category_id %>"
+                      <a class="nav-link" href="/char-wise-sort/?name=z-a&category=<%= category_id %>"
                         >Char:zZ - aA</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/new-arrivals-sort/?category=<%= category_id %>"
+                      <a class="nav-link" href="/new-arrivals-sort/?category=<%= category_id %>"
                         >New Arrivals</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/top-rated-sort/?category=<%= category_id %>"
+                      <a class="nav-link" href="/top-rated-sort/?category=<%= category_id %>"
                         >Top Rated</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/api/feature-product/?category=<%= category_id %>"
+                      <a class="nav-link" href="/feature-product/?category=<%= category_id %>"
                         >feature Product</a
                       >
                     </li>
@@ -102,11 +102,11 @@
             <% if (products.length> 0) { %> <% for (let i=0; i <
             products.length; i++) { %>
             <div class="col-lg-3 col-md-4">
-              <a href="/api/aProduct?id=<%= products[i].id %>"></a>
+              <a href="/aProduct?id=<%= products[i].id %>"></a>
               <div class="product-cart-wrap mb-30">
                 <div class="product-img-action-wrap">
                   <div class="product-img product-img-zoom">
-                    <a href="/api/aProduct?id=<%= products[i].id %>">
+                    <a href="/aProduct?id=<%= products[i].id %>">
                       <img
                         class="default-img"
                         src="/productimages/<%= products[i].images[0] %>"
@@ -157,7 +157,7 @@
                   </div>
                   <div class="product-action-1 show">
                     <!-- Use a common class "add-to-cart-btn" for all add to cart buttons -->
-                    <!-- <a href="/api/addToCart?id=<%= products[i].id %>""><i class="fi-rs-shopping-bag-add"></i></a> -->
+                    <!-- <a href="/addToCart?id=<%= products[i].id %>""><i class="fi-rs-shopping-bag-add"></i></a> -->
                     <a
                       aria-label="Add To Cart"
                       class="float-right action-btn hover-up add-to-cart-btn"
@@ -216,7 +216,7 @@
 <script>
   function wishList(id) {
     $.ajax({
-      url: `/api/addToList?id=${id}`,
+      url: `/addToList?id=${id}`,
       method: "get",
       success: (response) => {
         if (response.status) {
@@ -244,7 +244,7 @@
 <script>
   function addToCart(id) {
     $.ajax({
-      url: `/api/addToCart?id=${id}`,
+      url: `/addToCart?id=${id}`,
       method: "get",
       success: (response) => {
         if (response.status) {
@@ -270,7 +270,7 @@
               confirmButtonText: "Go to Cart",
             }).then((result) => {
               if (result.isConfirmed) {
-                window.location.href = "/api/cart"; // Redirect the user to the cart page
+                window.location.href = "/cart"; // Redirect the user to the cart page
               }
             });
           } else if (response.error === "Product out of stock") {

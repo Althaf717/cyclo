@@ -46,7 +46,7 @@ const updateOffer = async (req, res) => {
 
     console.log("Updated product:", product);
 
-    res.redirect("/api/admin/productOfferpage");
+    res.redirect("/admin/productOfferpage");
   } catch (error) {
     console.log(
       "Error happened in the offerctrl in the function updateOffer:",
@@ -111,7 +111,7 @@ const updateCategoryOffer = async (req, res) => {
 
     console.log("Updated prices for products in category:", category.name);
 
-    res.redirect("/api/admin/productOfferpage");
+    res.redirect("/admin/productOfferpage");
   } catch (error) {
     console.log(
       "Error happened in the offerctrl in the function updateCategoryOffer:",
