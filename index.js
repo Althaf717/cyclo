@@ -12,7 +12,7 @@ const session = require("express-session");
 const mongodbSession = require("connect-mongodb-session")(session);
 const loadCategories = require("./Middleware/loadCategories");
 const store = new mongodbSession({
-  uri: process.env.MONGO_URL,
+  uri:process.env.MONGO_URL,
   collection: "SessionDB",
 });
 
