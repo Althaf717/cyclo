@@ -158,7 +158,7 @@ const emailVerified = async (req, res) => {
       req.session.user = saveUserData._id;
       req.session.save();
 
-      res.redirect("");
+      res.redirect("/");
     } else {
       // res.render("emailOtp",{message:"Invalid OTP Re-enter Correct OTP"})
       res.render("emailOtp", { message: "Invalid OTP Re-enter Correct OTP" });
@@ -221,7 +221,7 @@ const userisLogin = async (req, res) => {
       if (findUser.is_blocked !== true) {
         req.session.user = findUser._id;
         req.session.save();
-        res.redirect("");
+        res.redirect("/");
       } else {
         res.render("userLogin", { message: "your blocked admin" });
       }
@@ -242,7 +242,7 @@ const userisLogout = async (req, res) => {
   try {
     req.session.destroy();
 
-    res.redirect("");
+    res.redirect("/");
   } catch (error) {
     console.log("Error happens in userControler userLogout function:", error);
   }
