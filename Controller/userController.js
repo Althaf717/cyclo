@@ -27,14 +27,12 @@ const homePage = async (req, res) => {
     const user = req.session.user;
    
     if (user) {
-    
+      const catogary = await Category.find();
       const userdata = await User.findById(user);
       const product = await Product.find().sort({ _id: -1 }).limit(8).populate("category");
       const popular = await Product.find().sort({ sold: -1 }).limit(8).populate("category");
       const feature = await Product.find().sort({ regularPrice: -1 }).limit(8).populate("category");
-      console.log("hi");
-      const catogary = await Category.find();
-      console.log("hello");
+      
 
       // const banner= await Banner.find()
       const pr = product.status == true;
